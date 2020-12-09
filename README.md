@@ -19,6 +19,6 @@ Mission statement: We hope that Rosalind will inspire a new generation of bioinf
 
 * Python Village
 * Bioinformatics Stronghold
-* bioinformatics Armory
+* Bioinformatics Armory
 * Bioinformatics Textbook Track
 * Algorithmic Height
