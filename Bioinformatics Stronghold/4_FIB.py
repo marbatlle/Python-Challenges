@@ -31,7 +31,7 @@ while n >= 1:
     ri = rm * k
     n -= 1
 
-print(pairs)
+print(rt)
 
 """
 o - small (children) rabbits. They have to mature and reproduce in the next cycle only.
