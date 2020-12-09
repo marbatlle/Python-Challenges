@@ -12,35 +12,27 @@ Given: Positive integers n≤40 and k≤5.
 
 Return: The total number of rabbit pairs that will be present after n months, if we begin with 1 pair and in each generation, every pair of reproduction-age rabbits produces a litter of k rabbit pairs (instead of only 1 pair).
 """
-# ri - infant rabbits. They have to mature and reproduce in the next cycle only
-# rm - mature rabbits. They can reproduce and move to the next cycle
+# r1 - First Generation
+# r2 - Second Generation
 # k -  every pair of reproduction-age rabbits produces a litter of k rabbit pairs 
 # n - total number of months / cycles
 
 # each cycle:
 # n1
-n = 5
-k = 3
-ri = 0
-rm = 1
-rt = 1
 
-while n >= 1:
-    rt = rm + ri
-    rm += ri
-    ri = rm * k
-    n -= 1
 
-print(rt)
+def rabbit(n,k):
+    r1 = 1
+    r2 = 1
+    if n == 0:
+        return r1
+    elif n == 1:
+        return r2
+    else:
+        for i in range(2,n):
+            rn = r1 * k + r2
+            r1 = r2
+            r2 = rn
+        return r2
 
-"""
-o - small (children) rabbits. They have to mature and reproduce in the next cycle only.
-0 - mature (parents) rabbits. They can reproduce and move to the next cycle.
-
-Month 1: [o]
-Month 2: [0]
-Month 3: [0 o o]
-Month 4: [0 o o 0 0]
-Month 5: [0 o o 0 0 0 o o 0 o o]
-Month 6: [0 o o 0 0 0 o o 0 o o 0 o o 0 0 0 o o 0 0]
-"""
+print(rabbit(28,4))
